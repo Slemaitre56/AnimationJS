@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* background: linear-gradient(to left, rgba(212, 102, 102),rgb(246, 180, 180)80%); */
+    background: linear-gradient(to left, rgb(251, 180, 180),rgb(217, 197, 196)80%);
+    z-index: -1;
+}
+nav {
+    display: flex;
+    min-height: 10vh;
+    color: white;
+    align-items: center;
+    justify-content: end;
+    padding-right: 10%;
+
+}
+
+.menu-nav {
+    display: flex;
+    font-size: 20px;
+    text-transform: uppercase;
+
+}
+section {
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+.hero {
+    height: 60%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#prevBtn {
+    position: absolute;
+    top: 240px;
+    left: 10px;
+    color: white;
+    font-size: 36px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 9;
+}
+#nextBtn {
+    position: absolute;
+    top: 240px;
+    right: 10px;
+    color: white;
+    font-size: 36px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 9;
+}
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.headLine {
+    font-family: 'Rubik', sans-serif;
+    color: white;
+    position: absolute;
+    top: 95%;
+    left: 3%;
+    font-size: 60px;
+    transform: translate(-20%,-70%);
+    -webkit-transform: translate(-20%,-70%);
+    -moz-transform: translate(-20%,-70%);
+    -ms-transform: translate(-20%,-70%);
+    -o-transform: translate(-20%,-70%);
+    z-index: 2;
+}
+.hero::after {
+    content: "";
+    background: #000;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.1;
+}
+li {
+    list-style: none;
+    width: 130px;
+    text-align: center;
+    margin: 5px;
+
+}
+.active,
+li:hover {
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+    border-radius: 10px;
+}
+li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+}
+/*-----------MAIN-----------*/
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.enTravaux {
+    height: 80vh;
+}
+/*----------CONTACT----------*/
+.body-contact {
+    height: 80vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-left: 20%;
+}
+.h1F {
+    font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    margin: 30px;
+    text-align: center;
+}
+.slider2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to left, rgb(191, 202, 201),rgb(48, 58, 60)80%);
+    z-index: -1;
+}
+.form,
+.form-mail,
+.form-text {
+    width: 80%;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+
+}
+.form input,
+.form-mail input,
+.form-text input {
+    width: 100%;
+    height: 100%;
+    color: white;
+    padding-top: 20px;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+}
+.form label,
+.form-mail label,
+.form-text label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    color: white;
+    border-bottom: 1px solid white;
+    font-size: 22px;
+}
+.form label::after,
+.form-mail label::after,
+.form-text label::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid rgb(34, 97, 190);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+.content-mail,
+.content-name,
+.content-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 0.3s ease;
+
+}
+/* ouvre l'espace pour ecrire et empeche qu'elle se referme si text*/
+.form input:focus + .label-name .content-name,
+.form input:valid + .label-name .content-name,
+.form-mail input:focus + .label-mail .content-mail,
+.form-mail input:valid + .label-mail .content-mail,
+.form-text input:focus + .label-text .content-text,
+.form-text input:valid + .label-text .content-text {
+    transform: translateY(-150%);
+    font-size: 16px;
+    color: rgb(34, 97, 190);
+
+}
+/*fait glisse le borderB bleu sous le input*/
+.form input:focus + .label-name::after,
+.form input:valid + .label-name::after,
+.form-mail input:focus + .label-mail::after,
+.form-mail input:valid + .label-mail::after,
+.form-text input:focus + .label-text::after,
+.form-text input:valid + .label-text::after {
+    transform: translateX(0%);
+
+}
+
+.formBtn {
+    width: 25%;
+    margin-left: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+.btn {
+    padding: 15px 40px;
+    background: border-box;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+/*regex*/
+
+.regex {
+    color: rgb(255, 3, 3);
+    font-size: 16px;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    text-transform: uppercase;
+}
+.error {
+    color: rgb(255, 136, 0);
+    font-size: 16px;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    text-transform: uppercase;
+}
+.good {
+    color: rgb(74, 236, 96);
+    font-size: 16px;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    text-transform: uppercase;
+}
+/*----------MODAL----------*/
+.modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s opacity 0.5s;
+
+}
+.bg-active {
+    visibility: visible;
+    opacity: 1;
+}
+.modal {
+    position: relative;
+    font-family: 'Rubik', sans-serif;
+    background-color: white;
+    width: 30%;
+    height: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.modal button {
+    padding: 10px 20px;
+    background: border-box;
+    cursor: pointer;
+}
+.modal input {
+    width: 50%;
+    height: 10%;
+}
+.modal p a {
+    text-decoration: none;
+    color: #000;
+}
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+}
+/*----------FOOTER----------*/
+footer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10% 1fr 1fr 10%;
+    position: relative;
+    min-height: 70px;
+}
+footer .picto-list {
+    grid-column: 3/3;
+    text-align: end;
+    padding-top: 10px;
+}
+footer li {
+    list-style: none;
+    display: inline;
+    padding-left: 5px;
+}
+footer li img {
+    width: 40px;
+    align-items: end;
+}
+footer .mention {
+    grid-column: 2/3;
+    font-size: 12px;
+    display: flex;
+    color: white;
+    align-items: end;
+}
+footer .mention a,
+footer p {
+    text-decoration: none;
+    color: #000;
+}

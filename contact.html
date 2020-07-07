@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>projet-contact</title>
+        <!-- referencement -->
+        <meta name="keywords" content="Jeux mômes contact">
+        <meta name="description" content="Vous trouverez sur cette page un formulaire de contact pour nous joindre à tout moment !">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet"> 
+
+    </head>
+    <body>
+        <header>
+            <nav>              
+                <ul id="menuActive" class="menu-nav">
+                    <li class="nav"><a href="index.html"> Accueil</a></li>
+                    <li class="nav"><a href="aPropos.html">A propos</a></li>
+                    <li class="nav"><a href="blog.html">Blog</a></li>
+                    <li class="nav"><a href="contact.html">Contact</a></li>
+                    <li class="nav"><a href="#"class="modal-btn">Connection</a></li>
+                </ul>
+            </nav>
+            <!-- debut de boite modal -->
+            <div class="modal-bg">
+                <div class="modal">
+                    <h2>Connexion</h2>         
+                    <label for="emailModal">Mail :</label>
+                    <input type="email" name="emailModal">
+                    <label for="motDePasse">Mot de passe :</label>
+                    <input type="password" name="motDePasse">
+                    <button >Connexion</button>
+                    <span class="modal-close">x</span>
+                    <p>Pas encore inscrit ? <a href="#">Cliquez ici</a></p>
+                    <p>Mot de passe oublié ? <a href="#">Cliquez ici</a></p>
+                </div>
+            </div>          
+        </header>
+        <div class="slider2"></div>
+<!-- formulaire --> 
+     <h1 class="h1F">Formulaire de contact</h1> 
+        <form class="body-contact"  action="traitement.php" method="post">  
+         
+        <div class="form">
+            <input type="text" name="name" id="nom" autocomplete="off" onchange="this.value = this.value.charAt(0).toUpperCase() + this.value.substr(1);" required>
+            <label for="name" class="label-name">
+                <span class="content-name" >Nom</span>
+            </label>
+            <span id="validNom" class="reset"></span>
+        </div>
+        <div class="form-mail">
+            <input type="text" name="email" id="mail" autocomplete="off" onchange="this.value = this.value.charAt(0).toUpperCase() + this.value.substr(1);" required>
+            <label for="email" class="label-mail">
+                <span class="content-mail">Mail</span>
+            </label>
+            <span id="validMail"class="reset"></span>     
+        </div>
+        <div class="form-text">
+            <input type="textarea" name="text" id="message" autocomplete="off" required>
+            <label for="text" class="label-text">
+                <span class="content-text">Message</span >
+            </label>
+            <span id="validText"class="reset"></span>     
+        </div>
+        <div class="formBtn">
+            <input type="submit" value="Envoyer" id="submit" class="btn">
+            <input type="reset" value="Annuler" id="reset" class="btn">
+        </div>
+    </form>
+
+        <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10752.831296394594!2d-2.7773043!3d47.64152815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48101c1ee7bc3d91%3A0xa622fa4c9bf9c44c!2sLyc%C3%A9e%20G%C3%A9n%C3%A9ral%20et%20technologique%20Alain%20Rene%20Lesage!5e0!3m2!1sfr!2sfr!4v1579383546573!5m2!1sfr!2sfr" width="400" height="200" frameborder="0" style="border:0;" allowfullscreen=""></iframe> -->
+        <footer>
+            <div class="mention">
+                <p>&copy;2019 Jeux de mômes - Tous droits réservés -</p>
+                <a href="sitemap.xml">Plan du site -
+                </a>
+                <a href="politique.html">politique de confidentialité -
+                </a>
+                <a href="mentions.html">mentions légales</a>
+            </div>
+            <ul class="picto-list">
+                <li class="picto"><a href="#"><img src="image/picto/facebook.png" alt="picto"></a></li>
+                <li class="picto"><a href="#"><img src="image/picto/insta.png" alt="picto"></a></li>
+                <li class="picto"><a href="#"><img src="image/picto/youtube.png" alt="picto"></a> </li>
+            </ul>
+        </footer>
+
+
+        <script src="js/active.js"></script>
+        <script>menuAct(4); </script>
+        <script src="js/contact.js"></script>
+        <script src="js/modal.js"></script>
+        
+    </body>
+</html>
